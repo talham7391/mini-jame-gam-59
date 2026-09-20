@@ -11,7 +11,7 @@ const OFF_SCREEN_POSITION = Vector2(-200, -200)
 
 func _ready() -> void:
 	current_player = player_normal
-	_swap_in(current_player, spawn_point.position)
+	_swap_in(current_player, spawn_point.position, 1, false)
 
 
 func _process(delta: float) -> void:
@@ -25,23 +25,29 @@ func _input(event: InputEvent) -> void:
 
 func _swap():
 	var current_position = current_player.position
+	var current_scale = current_player.scale_direction
 	_swap_out(current_player)
 	if current_player == player_normal:
 		current_player = player_hflat
 	else:
 		current_player = player_normal
-	_swap_in(current_player, current_position)
+	_swap_in(current_player, current_position, current_scale, true)
+	current_player.scale_direction = current_scale
 
 
 
-func _swap_in(p: CharacterBody2D, position: Vector2):
+func _swap_in(p: CharacterBody2D, position: Vector2, current_scale: int, splat):
 	p.position = position
+	p.scale.x = current_scale
 	p.set_script(preload("res://scripts/player.gd"))
 	if p == player_hflat:
-		p.jump_height = 300
+		p.jump_height = 400
 	p.splat.connect(_on_splat)
 	p.unsplat.connect(_on_unsplat)
 	p.set_physics_process(true)
+	p.init()
+	if splat:
+		p.start_splat()
 
 
 func _swap_out(p: CharacterBody2D):

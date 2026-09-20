@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://lutbed1r6fjx"]
+
+[ext_resource type="Script" uid="uid://dpms8ix3rhj5q" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+
+[node name="MainMenu" type="Node2D" unique_id=92575879]
+script = ExtResource("1_l6cm7")
+
+[node name="buttons" type="VBoxContainer" parent="." unique_id=2064999344]
+offset_left = 851.0
+offset_top = 124.0
+offset_right = 1164.0
+offset_bottom = 610.0
+
+[node name="button_level_1" type="Button" parent="buttons" unique_id=1812070282]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+disabled = true
+text = "Level 1"
+
+[node name="button_level_2" type="Button" parent="buttons" unique_id=774889265]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+disabled = true
+text = "Level 2"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1922269004]
+offset_left = 103.0
+offset_top = 116.0
+offset_right = 686.0
+offset_bottom = 614.0
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[font_size=48]How to Play[/font_size]
+
+[font_size=24]You are an [b]immortal tomato[/b] trapped in a series of puzzle-filled levels. Your goal is simple: [b]find a way to escape each level.[/b]
+
+Move using [b]WASD[/b] or the [b]Arrow Keys[/b].
+Press [b]Space[/b] to [b]jump[/b].
+Explore the environment, experiment with the level, and solve its puzzles.
+Reach the exit to complete the level.
+
+Since you’re immortal, don’t be afraid to try unusual solutions.[/font_size]"
+fit_content = true

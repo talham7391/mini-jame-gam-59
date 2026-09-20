@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://ugwosdsb7mmu"]
+
+[ext_resource type="AudioStream" uid="uid://dgflnslftv8oc" path="res://assets/audio/new_land.mp3" id="1_rq1h7"]
+
+[node name="BackgroundAudio" type="Node2D" unique_id=1475525252]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1564760711]
+stream = ExtResource("1_rq1h7")
+autoplay = true
