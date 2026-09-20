@@ -1,7 +1,7 @@
 extends Node
 
 var current_level = 1
-var levels_completed = 2
+var levels_completed = 1
 
 
 func load_level(idx):

@@ -43,7 +43,7 @@ func _physics_process(delta: float) -> void:
 	if is_flying:
 		velocity.x = -900
 	else:
-		velocity.x = direction * 100
+		velocity.x = direction * 200
 	
 	if Input.is_action_just_pressed("player_left") and scale_direction == 1:
 		scale.x = -1

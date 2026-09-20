@@ -496,11 +496,11 @@ size = Vector2(566.03125, 89)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7gny6"]
 size = Vector2(896.25, 129)
 
-[sub_resource type="Gradient" id="Gradient_0xm2m"]
+[sub_resource type="Gradient" id="Gradient_15mv3"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_2aecg"]
-gradient = SubResource("Gradient_0xm2m")
+gradient = SubResource("Gradient_15mv3")
 width = 48
 height = 48
 
@@ -612,7 +612,7 @@ animations = [{
 }]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_7nomh"]
-gradient = SubResource("Gradient_0xm2m")
+gradient = SubResource("Gradient_15mv3")
 height = 24
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1s4pk"]

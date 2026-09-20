@@ -24,10 +24,10 @@ disabled = true
 text = "Level 2"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1922269004]
-offset_left = 103.0
-offset_top = 116.0
-offset_right = 686.0
-offset_bottom = 614.0
+offset_left = 101.0
+offset_top = 94.0
+offset_right = 684.0
+offset_bottom = 626.0
 size_flags_horizontal = 3
 bbcode_enabled = true
 text = "[font_size=48]How to Play[/font_size]
@@ -36,6 +36,7 @@ text = "[font_size=48]How to Play[/font_size]
 
 Move using [b]WASD[/b] or the [b]Arrow Keys[/b].
 Press [b]Space[/b] to [b]jump[/b].
+Press [b]Esc[/b] to [b]return to menu[/b].
 Explore the environment, experiment with the level, and solve its puzzles.
 Reach the exit to complete the level.
 
