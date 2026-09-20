@@ -1,17 +1,363 @@
-[gd_scene format=3 uid="uid://cubudtqwka5sf"]
+[gd_scene format=4 uid="uid://cubudtqwka5sf"]
 
-[sub_resource type="Gradient" id="Gradient_7dm0k"]
-interpolation_mode = 1
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+[ext_resource type="Texture2D" uid="uid://bmdg18rbfgxwh" path="res://assets/tiles/grass_tiles.png" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://deklnfpya34ec" path="res://scripts/boost.gd" id="2_1bvp3"]
+[ext_resource type="Script" uid="uid://db3f6w4wofkv1" path="res://scripts/splat_controller.gd" id="2_h2yge"]
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_2gd5r"]
-gradient = SubResource("Gradient_7dm0k")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.5, 0)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kek77"]
+size = Vector2(80, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_272bh"]
+size = Vector2(16.0625, 80)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h2yge"]
+texture = ExtResource("2_0xm2m")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_1bvp3"]
+sources/0 = SubResource("TileSetAtlasSource_h2yge")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rpub2"]
+size = Vector2(16.5, 46.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_efxa6"]
+size = Vector2(176, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dg77c"]
+size = Vector2(48.03125, 240)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ycdy4"]
+size = Vector2(16.0625, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w48qg"]
+size = Vector2(16.0625, 272)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vivmo"]
+size = Vector2(16.0625, 143)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2cqfq"]
+size = Vector2(64, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yaehf"]
+size = Vector2(64, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_074og"]
+size = Vector2(480, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cegan"]
+size = Vector2(480, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0xm2m"]
+texture = ExtResource("2_0xm2m")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_g6oaq"]
+sources/0 = SubResource("TileSetAtlasSource_0xm2m")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
+size = Vector2(96.125, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
+size = Vector2(96.125, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lquwl"]
+size = Vector2(96.125, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
+size = Vector2(16.0625, 288)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4c57u"]
+size = Vector2(16.0625, 256)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5vw27"]
+size = Vector2(256.0625, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_82xsv"]
+size = Vector2(112, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g6oaq"]
+size = Vector2(352.5, 16)
+
+[sub_resource type="Gradient" id="Gradient_0xm2m"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0xm2m"]
+gradient = SubResource("Gradient_0xm2m")
+width = 24
+height = 24
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rk0h4"]
+size = Vector2(24, 24)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_h2yge"]
+gradient = SubResource("Gradient_0xm2m")
+width = 32
+height = 12
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
+size = Vector2(32, 12)
 
 [node name="Main" type="Node2D" unique_id=960308534]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1736089846]
-position = Vector2(368, 213)
-texture = SubResource("GradientTexture2D_2gd5r")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1208557177]
+position = Vector2(764, 44)
+shape = SubResource("RectangleShape2D_kek77")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="." unique_id=177745644]
+position = Vector2(853, 103)
+shape = SubResource("RectangleShape2D_272bh")
+
+[node name="TileMapLayer3" type="TileMapLayer" parent="." unique_id=1302957318]
+tile_map_data = PackedByteArray("AAAEAAIAAAABAAEAAAAEAAMAAAABAAEAAAAEAAQAAAABAAEAAAAEAAUAAAABAAEAAAAEAAYAAAABAAEAAAAEAAcAAAABAAEAAAAEAAgAAAABAAEAAAAEAAkAAAABAAEAAAAEAAoAAAABAAEAAAAEAAsAAAABAAEAAAAEAA4AAAABAAEAAAAEAA8AAAABAAEAAAAEAA0AAAABAAEAAAAEAAwAAAABAAEAAAAEABAAAAABAAEAAAAEABEAAAABAAEAAAAEABIAAAABAAEAAAAFABIAAAABAAEAAAAGABIAAAABAAEAAAAHABIAAAABAAEAAAAIABIAAAABAAEAAAAJABIAAAABAAEAAAAKABIAAAABAAEAAAALABIAAAABAAEAAAAMABIAAAABAAEAAAANABIAAAABAAEAAAAOABIAAAABAAEAAAAPABIAAAABAAEAAAAQABIAAAABAAEAAAARABIAAAABAAEAAAASABIAAAABAAEAAAATABIAAAABAAEAAAAUABIAAAABAAEAAAAVABIAAAABAAEAAAAWABIAAAABAAEAAAAXABIAAAABAAEAAAAYABIAAAABAAEAAAAZABIAAAABAAEAAAAaABIAAAABAAEAAAAbABIAAAABAAEAAAAcABIAAAABAAEAAAAdABIAAAABAAEAAAAeABIAAAABAAEAAAAfABIAAAABAAEAAAAgABIAAAABAAEAAAAhABIAAAABAAEAAAAhAA4AAAABAAEAAAAhAA8AAAABAAEAAAAhABAAAAABAAEAAAAhABEAAAABAAEAAAAhAAgAAAABAAEAAAAkAA4AAAABAAEAAAAiAA4AAAABAAEAAAAkAAoAAAABAAEAAAAjAAoAAAABAAEAAAAiAAoAAAABAAEAAAAhAAoAAAABAAEAAAAhAAkAAAABAAEAAAAhAAcAAAABAAEAAAAhAAYAAAABAAEAAAAhAAUAAAABAAEAAAAhAAQAAAABAAEAAAAhAAMAAAABAAEAAAAhAAIAAAABAAEAAAAgAAIAAAABAAEAAAAfAAIAAAABAAEAAAAeAAIAAAABAAEAAAAdAAIAAAABAAEAAAAcAAIAAAABAAEAAAAbAAIAAAABAAEAAAAaAAIAAAABAAEAAAAZAAIAAAABAAEAAAAYAAIAAAABAAEAAAAXAAIAAAABAAEAAAAWAAIAAAABAAEAAAAVAAIAAAABAAEAAAAUAAIAAAABAAEAAAATAAIAAAABAAEAAAASAAIAAAABAAEAAAARAAIAAAABAAEAAAAQAAIAAAABAAEAAAAPAAIAAAABAAEAAAAOAAIAAAABAAEAAAANAAIAAAABAAEAAAAMAAIAAAABAAEAAAALAAIAAAABAAEAAAAKAAIAAAABAAEAAAAJAAIAAAABAAEAAAAIAAIAAAABAAEAAAAHAAIAAAABAAEAAAAGAAIAAAABAAEAAAAFAAIAAAABAAEAAAARABAAAAABAAEAAAASABAAAAABAAEAAAATABAAAAABAAEAAAATAA8AAAABAAEAAAATAA4AAAABAAEAAAATAA0AAAABAAEAAAATAAwAAAABAAEAAAATAAsAAAABAAEAAAATAAoAAAABAAEAAAATAAkAAAABAAEAAAATAAgAAAABAAEAAAATAAcAAAABAAEAAAATAAYAAAABAAEAAAATAAUAAAABAAEAAAATAAQAAAABAAEAAAATAAMAAAABAAEAAAARAA8AAAABAAEAAAARAA4AAAABAAEAAAARAA0AAAABAAEAAAARAAwAAAABAAEAAAARAAsAAAABAAEAAAARAAoAAAABAAEAAAARAAkAAAABAAEAAAARAAgAAAABAAEAAAARAAcAAAABAAEAAAARAAYAAAABAAEAAAARAAUAAAABAAEAAAARAAQAAAABAAEAAAARAAMAAAABAAEAAAASAAMAAAABAAEAAAASAAQAAAABAAEAAAASAAUAAAABAAEAAAASAAYAAAABAAEAAAASAAcAAAABAAEAAAASAAgAAAABAAEAAAASAAkAAAABAAEAAAASAAoAAAABAAEAAAASAAsAAAABAAEAAAASAAwAAAABAAEAAAASAA0AAAABAAEAAAASAA4AAAABAAEAAAASAA8AAAABAAEAAAAFAA4AAAABAAEAAAAGAA4AAAABAAEAAAAHAA4AAAABAAEAAAAIAA4AAAABAAEAAAAFAAoAAAABAAEAAAAGAAoAAAABAAEAAAAHAAoAAAABAAEAAAAIAAoAAAABAAEAAAAFAAYAAAABAAEAAAAGAAYAAAABAAEAAAAHAAYAAAABAAEAAAAIAAYAAAABAAEAAAAUABAAAAABAAEAAAAVABAAAAABAAEAAAAWABAAAAABAAEAAAAXABAAAAABAAEAAAAYABAAAAABAAEAAAAZABAAAAABAAEAAAAaABAAAAABAAEAAAAbABAAAAABAAEAAAAjAA4AAAABAAEAAAAZAA0AAAAAAAEAAAAZAA4AAAAAAAEAAAAZAA8AAAAAAAEAAAA=")
+tile_set = SubResource("TileSet_1bvp3")
+
+[node name="Area2D" type="Area2D" parent="TileMapLayer3" unique_id=1209415019]
+script = ExtResource("2_1bvp3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMapLayer3/Area2D" unique_id=1517670652]
+position = Vector2(408, 231.625)
+shape = SubResource("RectangleShape2D_rpub2")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=386909933]
+tile_map_data = PackedByteArray("AAAEAAIAAAABAAEAAAAEAAMAAAABAAEAAAAEAAQAAAABAAEAAAAEAAUAAAABAAEAAAAEAAYAAAABAAEAAAAEAAcAAAABAAEAAAAEAAgAAAABAAEAAAAEAAkAAAABAAEAAAAEAAoAAAABAAEAAAAEAAsAAAABAAEAAAAEAA4AAAABAAEAAAAEAA8AAAABAAEAAAAEAA0AAAABAAEAAAAEAAwAAAABAAEAAAAEABAAAAABAAEAAAAEABEAAAABAAEAAAAEABIAAAABAAEAAAAFABIAAAABAAEAAAAGABIAAAABAAEAAAAHABIAAAABAAEAAAAIABIAAAABAAEAAAAJABIAAAABAAEAAAAKABIAAAABAAEAAAALABIAAAABAAEAAAAMABIAAAABAAEAAAANABIAAAABAAEAAAAOABIAAAABAAEAAAAPABIAAAABAAEAAAAQABIAAAABAAEAAAARABIAAAABAAEAAAASABIAAAABAAEAAAATABIAAAABAAEAAAAUABIAAAABAAEAAAAVABIAAAABAAEAAAAWABIAAAABAAEAAAAXABIAAAABAAEAAAAYABIAAAABAAEAAAAZABIAAAABAAEAAAAaABIAAAABAAEAAAAbABIAAAABAAEAAAAcABIAAAABAAEAAAAdABIAAAABAAEAAAAeABIAAAABAAEAAAAfABIAAAABAAEAAAAgABIAAAABAAEAAAAhABIAAAABAAEAAAAhAA4AAAABAAEAAAAhAA8AAAABAAEAAAAhABAAAAABAAEAAAAhABEAAAABAAEAAAAhAAgAAAABAAEAAAAkAA4AAAABAAEAAAAiAA4AAAABAAEAAAAkAAoAAAABAAEAAAAjAAoAAAABAAEAAAAiAAoAAAABAAEAAAAhAAoAAAABAAEAAAAhAAkAAAABAAEAAAAhAAcAAAABAAEAAAAhAAYAAAABAAEAAAAhAAUAAAABAAEAAAAhAAQAAAABAAEAAAAhAAMAAAABAAEAAAAhAAIAAAABAAEAAAAgAAIAAAABAAEAAAAfAAIAAAABAAEAAAAeAAIAAAABAAEAAAAdAAIAAAABAAEAAAAcAAIAAAABAAEAAAAbAAIAAAABAAEAAAAaAAIAAAABAAEAAAAZAAIAAAABAAEAAAAYAAIAAAABAAEAAAAXAAIAAAABAAEAAAAWAAIAAAABAAEAAAAVAAIAAAABAAEAAAAUAAIAAAABAAEAAAATAAIAAAABAAEAAAASAAIAAAABAAEAAAARAAIAAAABAAEAAAAQAAIAAAABAAEAAAAPAAIAAAABAAEAAAAOAAIAAAABAAEAAAANAAIAAAABAAEAAAAMAAIAAAABAAEAAAALAAIAAAABAAEAAAAKAAIAAAABAAEAAAAJAAIAAAABAAEAAAAIAAIAAAABAAEAAAAHAAIAAAABAAEAAAAGAAIAAAABAAEAAAAFAAIAAAABAAEAAAARABAAAAABAAEAAAASABAAAAABAAEAAAATABAAAAABAAEAAAATAA8AAAABAAEAAAATAA4AAAABAAEAAAATAA0AAAABAAEAAAATAAwAAAABAAEAAAATAAsAAAABAAEAAAATAAoAAAABAAEAAAATAAkAAAABAAEAAAATAAgAAAABAAEAAAATAAcAAAABAAEAAAATAAYAAAABAAEAAAATAAUAAAABAAEAAAATAAQAAAABAAEAAAATAAMAAAABAAEAAAARAA8AAAABAAEAAAARAA4AAAABAAEAAAARAA0AAAABAAEAAAARAAwAAAABAAEAAAARAAsAAAABAAEAAAARAAoAAAABAAEAAAARAAkAAAABAAEAAAARAAgAAAABAAEAAAARAAcAAAABAAEAAAARAAYAAAABAAEAAAARAAUAAAABAAEAAAARAAQAAAABAAEAAAARAAMAAAABAAEAAAASAAMAAAABAAEAAAASAAQAAAABAAEAAAASAAUAAAABAAEAAAASAAYAAAABAAEAAAASAAcAAAABAAEAAAASAAgAAAABAAEAAAASAAkAAAABAAEAAAASAAoAAAABAAEAAAASAAsAAAABAAEAAAASAAwAAAABAAEAAAASAA0AAAABAAEAAAASAA4AAAABAAEAAAASAA8AAAABAAEAAAAFAA4AAAABAAEAAAAGAA4AAAABAAEAAAAHAA4AAAABAAEAAAAIAA4AAAABAAEAAAAFAAoAAAABAAEAAAAGAAoAAAABAAEAAAAHAAoAAAABAAEAAAAIAAoAAAABAAEAAAAFAAYAAAABAAEAAAAGAAYAAAABAAEAAAAHAAYAAAABAAEAAAAIAAYAAAABAAEAAAAUABAAAAABAAEAAAAVABAAAAABAAEAAAAWABAAAAABAAEAAAAXABAAAAABAAEAAAAYABAAAAABAAEAAAAZABAAAAABAAEAAAAaABAAAAABAAEAAAAbABAAAAABAAEAAAAjAA4AAAABAAEAAAA=")
+tile_set = SubResource("TileSet_1bvp3")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="TileMapLayer2" unique_id=1605738607]
+collision_layer = 2
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="TileMapLayer2/StaticBody2D2" unique_id=137217674]
+position = Vector2(104, 104)
+shape = SubResource("RectangleShape2D_kek77")
+one_way_collision = true
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="TileMapLayer2/StaticBody2D2" unique_id=2035551830]
+position = Vector2(104, 168)
+shape = SubResource("RectangleShape2D_kek77")
+one_way_collision = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="TileMapLayer2/StaticBody2D2" unique_id=1903915401]
+position = Vector2(104, 232)
+shape = SubResource("RectangleShape2D_kek77")
+one_way_collision = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TileMapLayer2" unique_id=603892560]
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="TileMapLayer2/StaticBody2D" unique_id=558381148]
+position = Vector2(360, 264)
+shape = SubResource("RectangleShape2D_efxa6")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="TileMapLayer2/StaticBody2D" unique_id=1967425293]
+position = Vector2(295.98438, 152)
+shape = SubResource("RectangleShape2D_dg77c")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="TileMapLayer2/StaticBody2D" unique_id=1697430677]
+position = Vector2(536, 264)
+shape = SubResource("RectangleShape2D_ycdy4")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="TileMapLayer2/StaticBody2D" unique_id=393931370]
+position = Vector2(72, 168)
+shape = SubResource("RectangleShape2D_w48qg")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="TileMapLayer2/StaticBody2D" unique_id=143910239]
+position = Vector2(536, 103.5)
+shape = SubResource("RectangleShape2D_vivmo")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="TileMapLayer2/StaticBody2D" unique_id=1955244813]
+position = Vector2(560, 232)
+shape = SubResource("RectangleShape2D_2cqfq")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="TileMapLayer2/StaticBody2D" unique_id=1111769844]
+position = Vector2(560, 168)
+shape = SubResource("RectangleShape2D_yaehf")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="TileMapLayer2/StaticBody2D" unique_id=1627585176]
+position = Vector2(304, 40)
+shape = SubResource("RectangleShape2D_074og")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TileMapLayer2/StaticBody2D" unique_id=491492270]
+position = Vector2(304, 296)
+shape = SubResource("RectangleShape2D_cegan")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=667268252]
+position = Vector2(800, 0)
+tile_map_data = PackedByteArray("AAAMABMAAAABAAEAAAANABMAAAABAAEAAAAOABMAAAABAAEAAAAPABMAAAABAAEAAAAQABMAAAABAAEAAAARABMAAAABAAEAAAASABMAAAABAAEAAAATABMAAAABAAEAAAAUABMAAAABAAEAAAAVABMAAAABAAEAAAAWABMAAAABAAEAAAAXABMAAAABAAEAAAAYABMAAAABAAEAAAAZABMAAAABAAEAAAAaABMAAAABAAEAAAAbABMAAAABAAEAAAAcABMAAAABAAEAAAAdABMAAAABAAEAAAAeABMAAAABAAEAAAAfABMAAAABAAEAAAAgABMAAAABAAEAAAAhABMAAAABAAEAAAAhABEAAAABAAEAAAAgABEAAAABAAEAAAAfABEAAAABAAEAAAAeABEAAAABAAEAAAAdABEAAAABAAEAAAAcABEAAAABAAEAAAAbABEAAAABAAEAAAAbAA8AAAABAAEAAAAbAA4AAAABAAEAAAAbAA0AAAABAAEAAAAbAAwAAAABAAEAAAAbAAsAAAABAAEAAAAbAAoAAAABAAEAAAAbAAkAAAABAAEAAAAbAAgAAAABAAEAAAAbAAcAAAABAAEAAAAbAAYAAAABAAEAAAAbAAUAAAABAAEAAAAbAAQAAAABAAEAAAAbAAMAAAABAAEAAAAbAAIAAAABAAEAAAAaAAIAAAABAAEAAAAZAAIAAAABAAEAAAAYAAIAAAABAAEAAAAXAAIAAAABAAEAAAAWAAIAAAABAAEAAAAVAAIAAAABAAEAAAAUAAIAAAABAAEAAAATAAIAAAABAAEAAAASAAIAAAABAAEAAAARAAIAAAABAAEAAAAQAAIAAAABAAEAAAAPAAIAAAABAAEAAAAOAAIAAAABAAEAAAANAAIAAAABAAEAAAAMAAIAAAABAAEAAAAMAAMAAAABAAEAAAAMAAQAAAABAAEAAAAMAAUAAAABAAEAAAAMAAYAAAABAAEAAAAMAAcAAAABAAEAAAAMAAgAAAABAAEAAAAMAAkAAAABAAEAAAAMAAoAAAABAAEAAAAMAAsAAAABAAEAAAAMAAwAAAABAAEAAAAMAA0AAAABAAEAAAAMAA4AAAABAAEAAAAMAA8AAAABAAEAAAAMABAAAAABAAEAAAAMABEAAAABAAEAAAAMABIAAAABAAEAAAANAA8AAAABAAEAAAAOAA8AAAABAAEAAAAPAA8AAAABAAEAAAAQAA8AAAABAAEAAAARAA8AAAABAAEAAAANAAsAAAABAAEAAAAOAAsAAAABAAEAAAAPAAsAAAABAAEAAAAQAAsAAAABAAEAAAARAAsAAAABAAEAAAANAAcAAAABAAEAAAAOAAcAAAABAAEAAAAPAAcAAAABAAEAAAAQAAcAAAABAAEAAAARAAcAAAABAAEAAAAbABAAAAABAAEAAAA=")
+tile_set = SubResource("TileSet_g6oaq")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="TileMapLayer" unique_id=134737577]
+collision_layer = 2
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="TileMapLayer/StaticBody2D2" unique_id=1339742667]
+position = Vector2(240, 120)
+shape = SubResource("RectangleShape2D_h2yge")
+one_way_collision = true
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="TileMapLayer/StaticBody2D2" unique_id=1764281574]
+position = Vector2(240, 184)
+shape = SubResource("RectangleShape2D_0xm2m")
+one_way_collision = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="TileMapLayer/StaticBody2D2" unique_id=1142879310]
+position = Vector2(240.0625, 248)
+shape = SubResource("RectangleShape2D_lquwl")
+one_way_collision = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TileMapLayer" unique_id=1147091637]
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="TileMapLayer/StaticBody2D" unique_id=1589410687]
+position = Vector2(199.96875, 176)
+shape = SubResource("RectangleShape2D_7mycd")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="TileMapLayer/StaticBody2D" unique_id=525673739]
+position = Vector2(439.96875, 160)
+shape = SubResource("RectangleShape2D_4c57u")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="TileMapLayer/StaticBody2D" unique_id=642993353]
+position = Vector2(319.96875, 40)
+shape = SubResource("RectangleShape2D_5vw27")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TileMapLayer/StaticBody2D" unique_id=2093452360]
+position = Vector2(488, 280)
+shape = SubResource("RectangleShape2D_82xsv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMapLayer/StaticBody2D" unique_id=1717942930]
+position = Vector2(367.75, 312)
+shape = SubResource("RectangleShape2D_g6oaq")
+
+[node name="player_normal" type="CharacterBody2D" parent="." unique_id=228705720]
+position = Vector2(16, -7)
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="player_normal" unique_id=1159830384]
+position = Vector2(0, -12)
+texture = SubResource("GradientTexture2D_0xm2m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_normal" unique_id=1576615147]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_rk0h4")
+
+[node name="player_hflat" type="CharacterBody2D" parent="." unique_id=125525335]
+position = Vector2(58, -7)
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="player_hflat" unique_id=1736089846]
+position = Vector2(0, -6)
+texture = SubResource("GradientTexture2D_h2yge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_hflat" unique_id=967543839]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="Splat controller" type="Node" parent="." unique_id=180138362 node_paths=PackedStringArray("spawn_point", "player_normal", "player_hflat")]
+script = ExtResource("2_h2yge")
+spawn_point = NodePath("../spawn_point")
+player_normal = NodePath("../player_normal")
+player_hflat = NodePath("../player_hflat")
+
+[node name="spawn_point" type="Node2D" parent="." unique_id=223173218]
+position = Vector2(444, 207)
